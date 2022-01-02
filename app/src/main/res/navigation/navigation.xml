@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_subject_list"
-        android:name="com.example.teacherassistant.fragment.subject.fragment_subject_list"
+        android:name="com.example.teacherassistant.fragment.subject.FragmentSubjectList"
         android:label="fragment_subject_list" >
         <action
             android:id="@+id/action_fragment_subject_list_to_fragmentStudentListPerSubject"
@@ -27,9 +27,6 @@
         <action
             android:id="@+id/action_fragmentStudentListPerSubject_to_fragmentMarkList"
             app:destination="@id/fragmentMarkList" />
-        <action
-            android:id="@+id/action_fragmentStudentListPerSubject_to_fragment_subject_list"
-            app:destination="@id/fragment_subject_list" />
     </fragment>
     <fragment
         android:id="@+id/fragmentSubcjectListPerStudent"
@@ -38,20 +35,10 @@
         <action
             android:id="@+id/action_fragmentSubcjectListPerStudent_to_fragmentMarkList"
             app:destination="@id/fragmentMarkList" />
-        <action
-            android:id="@+id/action_fragmentSubcjectListPerStudent_to_fragmentStudentList"
-            app:destination="@id/fragmentStudentList" />
     </fragment>
     <fragment
         android:id="@+id/fragmentMarkList"
         android:name="com.example.teacherassistant.fragment.FragmentMarkList"
         android:label="fragment_mark_list"
-        tools:layout="@layout/fragment_mark_list" >
-        <action
-            android:id="@+id/action_fragmentMarkList_to_fragmentSubcjectListPerStudent"
-            app:destination="@id/fragmentSubcjectListPerStudent" />
-        <action
-            android:id="@+id/action_fragmentMarkList_to_fragmentStudentListPerSubject"
-            app:destination="@id/fragmentStudentListPerSubject" />
-    </fragment>
+        tools:layout="@layout/fragment_mark_list" />
 </navigation>
