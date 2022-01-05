@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.teacherassistant.MainActivity
 import com.example.teacherassistant.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,13 +24,15 @@ class FragmentMarkList : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    lateinit var markAdapter: MarkListAdapter
+    lateinit var markListLayoutManager: LinearLayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        markAdapter = (activity as MainActivity).markAdapter
     }
 
     override fun onCreateView(
@@ -36,6 +41,17 @@ class FragmentMarkList : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mark_list, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        markListLayoutManager = LinearLayoutManager(context)
+        view.findViewById<RecyclerView>(R.id.rv_mark_list)
+            .apply {
+                adapter = markAdapter
+                layoutManager = markListLayoutManager
+            }
+
     }
 
     companion object {

@@ -10,12 +10,12 @@
         android:label="FragmentStudentList" >
         <action
             android:id="@+id/action_fragmentStudentList_to_fragmentSubcjectListPerStudent"
-            app:destination="@id/fragmentSubcjectListPerStudent" />
+            app:destination="@id/fragmentSubjectListPerStudent" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_subject_list"
+        android:id="@+id/fragmentSubjectList"
         android:name="com.example.teacherassistant.fragment.subject.FragmentSubjectList"
-        android:label="fragment_subject_list" >
+        android:label="FragmentSubjectList" >
         <action
             android:id="@+id/action_fragment_subject_list_to_fragmentStudentListPerSubject"
             app:destination="@id/fragmentStudentListPerSubject" />
@@ -29,8 +29,8 @@
             app:destination="@id/fragmentMarkList" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentSubcjectListPerStudent"
-        android:name="com.example.teacherassistant.fragment.student.FragmentSubcjectListPerStudent"
+        android:id="@+id/fragmentSubjectListPerStudent"
+        android:name="com.example.teacherassistant.fragment.student.FragmentSubjectListPerStudent"
         android:label="FragmentSubcjectListPerStudent" >
         <action
             android:id="@+id/action_fragmentSubcjectListPerStudent_to_fragmentMarkList"
