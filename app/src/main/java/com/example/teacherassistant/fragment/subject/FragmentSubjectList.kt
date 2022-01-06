@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.teacherassistant.MainActivity
 import com.example.teacherassistant.R
+import com.example.teacherassistant.fragment.student.StudentListAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,8 @@ class FragmentSubjectList : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var subjectAdapter: SubjectListAdapter
+    lateinit var subjectListLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +34,7 @@ class FragmentSubjectList : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        subjectAdapter = (activity as MainActivity).subjectAdapter
     }
 
     override fun onCreateView(
@@ -38,6 +45,16 @@ class FragmentSubjectList : Fragment() {
         return inflater.inflate(R.layout.fragment_subject_list, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        subjectListLayoutManager = LinearLayoutManager(context)
+        view.findViewById<RecyclerView>(R.id.rv_subject_list)
+            .apply {
+                adapter = subjectAdapter
+                layoutManager = subjectListLayoutManager
+            }
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

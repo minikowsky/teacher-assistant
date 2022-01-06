@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragmentStudentList">
+    app:startDestination="@+id/fragment_mark_list">
     <fragment
-        android:id="@+id/fragmentStudentList"
+        android:id="@+id/fragment_student_list"
         android:name="com.example.teacherassistant.fragment.student.FragmentStudentList"
         android:label="FragmentStudentList" >
         <action
@@ -13,7 +13,7 @@
             app:destination="@id/fragmentSubjectListPerStudent" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentSubjectList"
+        android:id="@+id/fragment_subject_list"
         android:name="com.example.teacherassistant.fragment.subject.FragmentSubjectList"
         android:label="FragmentSubjectList" >
         <action
@@ -26,7 +26,7 @@
         android:label="FragmentStudentListPerSubject" >
         <action
             android:id="@+id/action_fragmentStudentListPerSubject_to_fragmentMarkList"
-            app:destination="@id/fragmentMarkList" />
+            app:destination="@+id/fragment_mark_list" />
     </fragment>
     <fragment
         android:id="@+id/fragmentSubjectListPerStudent"
@@ -34,10 +34,10 @@
         android:label="FragmentSubcjectListPerStudent" >
         <action
             android:id="@+id/action_fragmentSubcjectListPerStudent_to_fragmentMarkList"
-            app:destination="@id/fragmentMarkList" />
+            app:destination="@id/fragment_mark_list" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentMarkList"
+        android:id="@+id/fragment_mark_list"
         android:name="com.example.teacherassistant.fragment.FragmentMarkList"
         android:label="fragment_mark_list"
         tools:layout="@layout/fragment_mark_list" />
