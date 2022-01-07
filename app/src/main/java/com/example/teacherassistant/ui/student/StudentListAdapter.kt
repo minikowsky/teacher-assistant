@@ -1,4 +1,4 @@
-package com.example.teacherassistant.fragment.student
+package com.example.teacherassistant.ui.student
 
 import android.view.LayoutInflater
 import android.view.View

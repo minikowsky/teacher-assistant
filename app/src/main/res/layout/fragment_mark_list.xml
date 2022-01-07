@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragment_mark_list"
-    tools:context=".fragment.FragmentMarkList">
+    tools:context=".ui.mark.FragmentMarkList">
 
 
     <androidx.recyclerview.widget.RecyclerView

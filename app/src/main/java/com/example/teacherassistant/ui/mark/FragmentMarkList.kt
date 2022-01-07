@@ -1,4 +1,4 @@
-package com.example.teacherassistant.fragment.student
+package com.example.teacherassistant.ui.mark
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,26 +14,25 @@ import com.example.teacherassistant.R
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
 /**
  * A simple [Fragment] subclass.
- * Use the [FragmentStudentList.newInstance] factory method to
+ * Use the [FragmentMarkList.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragmentStudentList : Fragment() {
+class FragmentMarkList : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var studentAdapter: StudentListAdapter
-    lateinit var studentListLayoutManager: LinearLayoutManager
-
+    lateinit var markAdapter: MarkListAdapter
+    lateinit var markListLayoutManager: LinearLayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-        studentAdapter = (activity as MainActivity).studentAdapter
-
+        markAdapter = (activity as MainActivity).markAdapter
     }
 
     override fun onCreateView(
@@ -41,18 +40,18 @@ class FragmentStudentList : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_student_list, container, false)
+        return inflater.inflate(R.layout.fragment_mark_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        studentListLayoutManager = LinearLayoutManager(context)
-        view.findViewById<RecyclerView>(R.id.rv_student_list)
+        markListLayoutManager = LinearLayoutManager(context)
+        view.findViewById<RecyclerView>(R.id.rv_mark_list)
             .apply {
-                adapter = studentAdapter
-                layoutManager = studentListLayoutManager
+                adapter = markAdapter
+                layoutManager = markListLayoutManager
             }
+
     }
 
     companion object {
@@ -62,12 +61,12 @@ class FragmentStudentList : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentStudentList.
+         * @return A new instance of fragment FragmentMarkList.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FragmentStudentList().apply {
+            FragmentMarkList().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

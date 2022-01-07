@@ -1,4 +1,4 @@
-package com.example.teacherassistant.fragment
+package com.example.teacherassistant.ui.mark
 
 import android.view.LayoutInflater
 import android.view.View

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragment_student_list"
-    tools:context=".fragment.student.FragmentStudentList">
+    tools:context=".ui.student.FragmentStudentList">
 
 
     <androidx.recyclerview.widget.RecyclerView

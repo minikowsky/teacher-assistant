@@ -1,4 +1,4 @@
-package com.example.teacherassistant.fragment.subject
+package com.example.teacherassistant.ui.subject
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.MainActivity
 import com.example.teacherassistant.R
-import com.example.teacherassistant.fragment.student.StudentListAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

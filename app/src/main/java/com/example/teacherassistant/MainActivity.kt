@@ -2,12 +2,9 @@ package com.example.teacherassistant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.teacherassistant.fragment.FragmentMarkList
-import com.example.teacherassistant.fragment.MarkListAdapter
-import com.example.teacherassistant.fragment.student.FragmentStudentList
-import com.example.teacherassistant.fragment.student.StudentListAdapter
-import com.example.teacherassistant.fragment.subject.FragmentSubjectList
-import com.example.teacherassistant.fragment.subject.SubjectListAdapter
+import com.example.teacherassistant.ui.mark.MarkListAdapter
+import com.example.teacherassistant.ui.student.StudentListAdapter
+import com.example.teacherassistant.ui.subject.SubjectListAdapter
 import com.example.teacherassistant.model.Mark
 import com.example.teacherassistant.model.Student
 import com.example.teacherassistant.model.Subject
