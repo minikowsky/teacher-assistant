@@ -7,7 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.R
-import com.example.teacherassistant.model.Subject
+import com.example.teacherassistant.data.Subject
 
 class SubjectListAdapter(val subjects: List<Subject>): RecyclerView.Adapter<SubjectListAdapter.Holder>() {
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){

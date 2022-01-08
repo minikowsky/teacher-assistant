@@ -3,37 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@+id/fragment_mark_list">
+    app:startDestination="@id/fragment_student_list">
     <fragment
         android:id="@+id/fragment_student_list"
         android:name="com.example.teacherassistant.ui.student.FragmentStudentList"
         android:label="FragmentStudentList" >
         <action
-            android:id="@+id/action_fragmentStudentList_to_fragmentSubcjectListPerStudent"
-            app:destination="@id/fragmentSubjectListPerStudent" />
+            android:id="@+id/action_fragment_student_list_to_fragment_subject_list"
+            app:destination="@id/fragment_subject_list" />
+        <action
+            android:id="@+id/action_fragment_student_list_to_fragment_mark_list"
+            app:destination="@id/fragment_mark_list" />
     </fragment>
     <fragment
         android:id="@+id/fragment_subject_list"
         android:name="com.example.teacherassistant.ui.subject.FragmentSubjectList"
         android:label="FragmentSubjectList" >
         <action
-            android:id="@+id/action_fragment_subject_list_to_fragmentStudentListPerSubject"
-            app:destination="@id/fragmentStudentListPerSubject" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragmentStudentListPerSubject"
-        android:name="com.example.teacherassistant.ui.subject.FragmentStudentListPerSubject"
-        android:label="FragmentStudentListPerSubject" >
+            android:id="@+id/action_fragment_subject_list_to_fragment_student_list"
+            app:destination="@id/fragment_student_list" />
         <action
-            android:id="@+id/action_fragmentStudentListPerSubject_to_fragmentMarkList"
-            app:destination="@+id/fragment_mark_list" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragmentSubjectListPerStudent"
-        android:name="com.example.teacherassistant.ui.student.FragmentSubjectListPerStudent"
-        android:label="FragmentSubcjectListPerStudent" >
-        <action
-            android:id="@+id/action_fragmentSubcjectListPerStudent_to_fragmentMarkList"
+            android:id="@+id/action_fragment_subject_list_to_fragment_mark_list"
             app:destination="@id/fragment_mark_list" />
     </fragment>
     <fragment
