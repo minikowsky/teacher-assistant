@@ -5,9 +5,9 @@ import android.os.Bundle
 import com.example.teacherassistant.ui.mark.MarkListAdapter
 import com.example.teacherassistant.ui.student.StudentListAdapter
 import com.example.teacherassistant.ui.subject.SubjectListAdapter
-import com.example.teacherassistant.data.Mark
-import com.example.teacherassistant.data.Student
-import com.example.teacherassistant.data.Subject
+import com.example.teacherassistant.data.mark.Mark
+import com.example.teacherassistant.data.student.Student
+import com.example.teacherassistant.data.subject.Subject
 
 class MainActivity : AppCompatActivity() {
     val students = mutableListOf<Student>(

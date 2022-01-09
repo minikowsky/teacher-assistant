@@ -1,4 +1,4 @@
-package com.example.teacherassistant.data
+package com.example.teacherassistant.data.subject
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

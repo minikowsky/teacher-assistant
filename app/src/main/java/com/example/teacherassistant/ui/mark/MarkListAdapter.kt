@@ -7,7 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.R
-import com.example.teacherassistant.data.Mark
+import com.example.teacherassistant.data.mark.Mark
 
 class MarkListAdapter(val marks: List<Mark>): RecyclerView.Adapter<MarkListAdapter.Holder>() {
     inner class Holder(itemView: View): RecyclerView.ViewHolder(itemView) {
