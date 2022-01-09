@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.student.FragmentStudentAdd">
+
+    <EditText
+        android:id="@+id/student_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/first_name" />
+
+    <EditText
+        android:id="@+id/student_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/last_name" />
+
+    <EditText
+        android:id="@+id/student_year_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/year_group" />
+    <Button
+        android:id="@+id/button_add_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        />
+    <Button
+        android:id="@+id/button_student_display_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list"
+        />
+
+</LinearLayout>

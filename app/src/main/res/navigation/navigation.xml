@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_fragment_student_list_to_fragment_mark_list"
             app:destination="@id/fragment_mark_list" />
+        <action
+            android:id="@+id/action_fragment_student_list_to_fragmentStudentAdd"
+            app:destination="@id/fragment_student_add" />
     </fragment>
     <fragment
         android:id="@+id/fragment_subject_list"
@@ -25,10 +28,44 @@
         <action
             android:id="@+id/action_fragment_subject_list_to_fragment_mark_list"
             app:destination="@id/fragment_mark_list" />
+        <action
+            android:id="@+id/action_fragment_subject_list_to_fragmentSubjectAdd"
+            app:destination="@id/fragmentSubjectAdd" />
     </fragment>
     <fragment
         android:id="@+id/fragment_mark_list"
         android:name="com.example.teacherassistant.ui.mark.FragmentMarkList"
         android:label="fragment_mark_list"
-        tools:layout="@layout/fragment_mark_list" />
+        tools:layout="@layout/fragment_mark_list" >
+        <action
+            android:id="@+id/action_fragment_mark_list_to_fragmentMarkAdd"
+            app:destination="@id/fragmentMarkAdd" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_student_add"
+        android:name="com.example.teacherassistant.ui.student.FragmentStudentAdd"
+        android:label="fragment_student_add"
+        tools:layout="@layout/fragment_student_add" >
+        <action
+            android:id="@+id/action_fragmentStudentAdd_to_fragment_student_list"
+            app:destination="@id/fragment_student_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSubjectAdd"
+        android:name="com.example.teacherassistant.ui.subject.FragmentSubjectAdd"
+        android:label="fragment_subject_add"
+        tools:layout="@layout/fragment_subject_add" >
+        <action
+            android:id="@+id/action_fragmentSubjectAdd_to_fragment_subject_list"
+            app:destination="@id/fragment_subject_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMarkAdd"
+        android:name="com.example.teacherassistant.ui.mark.FragmentMarkAdd"
+        android:label="fragment_mark_add"
+        tools:layout="@layout/fragment_mark_add" >
+        <action
+            android:id="@+id/action_fragmentMarkAdd_to_fragment_mark_list"
+            app:destination="@id/fragment_mark_list" />
+    </fragment>
 </navigation>

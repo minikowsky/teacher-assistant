@@ -29,8 +29,11 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/button_subject"
+        android:id="@+id/button_subject_delete"
         android:layout_width="0dp"
         android:layout_weight="5"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Del"/>
+
+
 </LinearLayout>

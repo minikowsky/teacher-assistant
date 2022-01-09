@@ -5,4 +5,13 @@
     <string name="subjects">Subjects</string>
     <string name="students">Students</string>
     <string name="infoText">Students</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="year_group">Year group</string>
+    <string name="add">Add</string>
+    <string name="list">List</string>
+    <string name="name">Name</string>
+    <string name="day">Day</string>
+    <string name="time">Time</string>
+    <string name="classroom">Classroom</string>
 </resources>

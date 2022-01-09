@@ -1,21 +1,18 @@
 package com.example.teacherassistant.ui.mark
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
+import android.widget.Button
+import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.teacherassistant.MainActivity
 import com.example.teacherassistant.R
+import com.example.teacherassistant.data.mark.Mark
 import com.example.teacherassistant.data.mark.MarkViewModel
-import com.example.teacherassistant.data.mark.MarkViewModelFactory
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.lang.NumberFormatException
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,14 +21,15 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FragmentMarkList.newInstance] factory method to
+ * Use the [FragmentMarkAdd.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragmentMarkList : Fragment() {
+class FragmentMarkAdd : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var viewModel: MarkViewModel
+    private lateinit var viewModel: MarkViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,31 +42,34 @@ class FragmentMarkList : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = ViewModelProvider(requireActivity())[MarkViewModel::class.java]
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mark_list, container, false)
+        return inflater.inflate(R.layout.fragment_mark_add, container, false)
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val factory = MarkViewModelFactory((requireNotNull(this.activity).application))
-        viewModel = ViewModelProvider(requireActivity(),factory)[MarkViewModel::class.java]
-        val markAdapter = MarkListAdapter(viewModel.marks, viewModel)
-        viewModel.marks.observe(viewLifecycleOwner,
-            Observer {
-                markAdapter.notifyDataSetChanged()
-            })
 
-        val markListLayoutManager = LinearLayoutManager(context)
-        view.findViewById<RecyclerView>(R.id.rv_mark_list)
-            .let {
-                it.adapter = markAdapter
-                it.layoutManager = markListLayoutManager
+        view.findViewById<Button>(R.id.button_add_mark).apply {
+            setOnClickListener {
+                val studentId: Int = 0
+                val subjectId: Int = 0
+                val markValue: Float?  = try {
+                    view.findViewById<EditText>(R.id.mark_add_mark).text.toString().toFloat()
+                } catch (e : NumberFormatException) {null}
+                val comment = view.findViewById<EditText>(R.id.mark_add_comment).text.toString()
+                val date = view.findViewById<EditText>(R.id.mark_add_date).text.toString()
+                val mark = Mark(0, studentId, subjectId,markValue?:0F,comment,date)
+                viewModel.createMark(mark)
             }
-
-        view.findViewById<FloatingActionButton>(R.id.fab_add_mark).setOnClickListener {
-            it.findNavController().navigate(R.id.action_fragment_mark_list_to_fragmentMarkAdd)
         }
+
+        view.findViewById<Button>(R.id.button_mark_display_list).apply {
+            setOnClickListener {
+                it.findNavController().navigate(R.id.action_fragmentMarkAdd_to_fragment_mark_list)
+            }
+        }
+
     }
 
     companion object {
@@ -78,12 +79,12 @@ class FragmentMarkList : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentMarkList.
+         * @return A new instance of fragment FragmentMarkAdd.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FragmentMarkList().apply {
+            FragmentMarkAdd().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

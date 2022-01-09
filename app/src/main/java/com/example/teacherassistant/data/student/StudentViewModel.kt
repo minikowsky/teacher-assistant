@@ -19,4 +19,10 @@ class StudentViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
+    fun createStudent(student: Student) {
+        viewModelScope.launch(Dispatchers.IO) {
+            studentDao.create(student)
+        }
+    }
+
 }

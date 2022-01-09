@@ -10,4 +10,4 @@ data class Subject(
     val name: String,
     val dayOfWeek: String,
     val time: String,
-    val classroomNumber: Number)
+    val classroomNumber: Int)

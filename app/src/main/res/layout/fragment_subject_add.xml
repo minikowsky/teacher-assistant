@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.subject.FragmentSubjectAdd">
+
+    <EditText
+        android:id="@+id/subject_add_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/subject_add_dayOfWeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/day" />
+
+    <EditText
+        android:id="@+id/subject_add_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/time" />
+    <EditText
+        android:id="@+id/subject_add_classroomNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/classroom" />
+    <Button
+        android:id="@+id/button_add_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        />
+    <Button
+        android:id="@+id/button_subject_display_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list"
+        />
+
+</LinearLayout>
