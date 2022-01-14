@@ -9,11 +9,8 @@ interface StudentDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun create(student: Student)
 
-    @Query("SELECT * FROM students ORDER BY id DESC")
+    @Query("SELECT * FROM students ORDER BY studentId DESC")
     fun getAll(): LiveData<List<Student>>
-
-    /*@Query("SELECT * FROM students WHERE id =  LIMIT 1")
-    fun getById(id: Int)*/
 
     @Delete
     fun delete(student: Student)

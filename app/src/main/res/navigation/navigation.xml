@@ -3,40 +3,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragment_student_list">
+    app:startDestination="@id/fragment_subject_list">
     <fragment
         android:id="@+id/fragment_student_list"
         android:name="com.example.teacherassistant.ui.student.FragmentStudentList"
         android:label="FragmentStudentList" >
         <action
-            android:id="@+id/action_fragment_student_list_to_fragment_subject_list"
-            app:destination="@id/fragment_subject_list" />
-        <action
             android:id="@+id/action_fragment_student_list_to_fragment_mark_list"
-            app:destination="@id/fragment_mark_list" />
-        <action
-            android:id="@+id/action_fragment_student_list_to_fragmentStudentAdd"
-            app:destination="@id/fragment_student_add" />
+            app:destination="@id/fragment_mark_list" >
+            <argument
+                android:name="subjectId"
+                app:argType="integer"/>
+            <argument
+                android:name="subjectName"
+                app:argType="string"/>
+            <argument
+                android:name="studentId"
+                app:argType="integer"/>
+            <argument
+                android:name="studentName"
+                app:argType="string"/>
+        </action>
+        <argument
+            android:name="subjectId"
+            app:argType="integer"/>
+        <argument
+            android:name="subjectName"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/fragment_subject_list"
         android:name="com.example.teacherassistant.ui.subject.FragmentSubjectList"
         android:label="FragmentSubjectList" >
         <action
+            android:id="@+id/action_fragment_subject_list_to_fragmentSettings"
+            app:destination="@id/fragmentSettings" />
+        <action
             android:id="@+id/action_fragment_subject_list_to_fragment_student_list"
-            app:destination="@id/fragment_student_list" />
+            app:destination="@id/fragment_student_list" >
+            <argument
+                android:name="subjectId"
+                app:argType="integer"/>
+            <argument
+                android:name="subjectName"
+                app:argType="string"/>
+        </action>
         <action
-            android:id="@+id/action_fragment_subject_list_to_fragment_mark_list"
-            app:destination="@id/fragment_mark_list" />
-        <action
-            android:id="@+id/action_fragment_subject_list_to_fragmentSubjectAdd"
-            app:destination="@id/fragmentSubjectAdd" />
+            android:id="@+id/action_fragment_subject_list_to_fragmentManagement"
+            app:destination="@id/fragmentManagement" />
     </fragment>
     <fragment
         android:id="@+id/fragment_mark_list"
         android:name="com.example.teacherassistant.ui.mark.FragmentMarkList"
         android:label="fragment_mark_list"
         tools:layout="@layout/fragment_mark_list" >
+        <argument
+            android:name="subjectId"
+            app:argType="integer"/>
+        <argument
+            android:name="subjectName"
+            app:argType="string"/>
+        <argument
+            android:name="studentId"
+            app:argType="integer"/>
+        <argument
+            android:name="studentName"
+            app:argType="string"/>
         <action
             android:id="@+id/action_fragment_mark_list_to_fragmentMarkAdd"
             app:destination="@id/fragmentMarkAdd" />
@@ -45,27 +77,32 @@
         android:id="@+id/fragment_student_add"
         android:name="com.example.teacherassistant.ui.student.FragmentStudentAdd"
         android:label="fragment_student_add"
-        tools:layout="@layout/fragment_student_add" >
-        <action
-            android:id="@+id/action_fragmentStudentAdd_to_fragment_student_list"
-            app:destination="@id/fragment_student_list" />
-    </fragment>
+        tools:layout="@layout/fragment_student_add" />
     <fragment
         android:id="@+id/fragmentSubjectAdd"
         android:name="com.example.teacherassistant.ui.subject.FragmentSubjectAdd"
         android:label="fragment_subject_add"
-        tools:layout="@layout/fragment_subject_add" >
-        <action
-            android:id="@+id/action_fragmentSubjectAdd_to_fragment_subject_list"
-            app:destination="@id/fragment_subject_list" />
-    </fragment>
+        tools:layout="@layout/fragment_subject_add" />
     <fragment
         android:id="@+id/fragmentMarkAdd"
         android:name="com.example.teacherassistant.ui.mark.FragmentMarkAdd"
         android:label="fragment_mark_add"
-        tools:layout="@layout/fragment_mark_add" >
+        tools:layout="@layout/fragment_mark_add" />
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.example.teacherassistant.ui.FragmentSettings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/fragmentManagement"
+        android:name="com.example.teacherassistant.ui.FragmentManagement"
+        android:label="fragment_management"
+        tools:layout="@layout/fragment_management" >
         <action
-            android:id="@+id/action_fragmentMarkAdd_to_fragment_mark_list"
-            app:destination="@id/fragment_mark_list" />
+            android:id="@+id/action_fragmentManagement_to_fragment_student_add"
+            app:destination="@id/fragment_student_add" />
+        <action
+            android:id="@+id/action_fragmentManagement_to_fragmentSubjectAdd"
+            app:destination="@id/fragmentSubjectAdd" />
     </fragment>
 </navigation>

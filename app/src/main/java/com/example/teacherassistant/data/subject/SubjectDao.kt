@@ -5,11 +5,8 @@ import androidx.room.*
 
 @Dao
 interface SubjectDao {
-    @Query("SELECT * FROM subjects ORDER BY id DESC")
+    @Query("SELECT * FROM subjects ORDER BY subjectId DESC")
     fun getAll(): LiveData<List<Subject>>
-
-    @Query("SELECT * FROM subjects WHERE name IN (SELECT )")
-
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun create(subject: Subject)

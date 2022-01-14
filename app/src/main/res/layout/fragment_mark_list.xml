@@ -7,11 +7,20 @@
     android:id="@+id/fragment_mark_list"
     tools:context=".ui.mark.FragmentMarkList">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mark_info_textView"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_margin="10sp"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_mark_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_mark"

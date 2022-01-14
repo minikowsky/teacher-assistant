@@ -4,7 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.teacherassistant.data.assignment.AssignmentDao
+import com.example.teacherassistant.data.assignment.AssignmentLink
+import com.example.teacherassistant.data.assignment.AssignmentLinkDao
 import com.example.teacherassistant.data.mark.Mark
 import com.example.teacherassistant.data.mark.MarkDao
 import com.example.teacherassistant.data.student.Student
@@ -12,13 +13,13 @@ import com.example.teacherassistant.data.student.StudentDao
 import com.example.teacherassistant.data.subject.Subject
 import com.example.teacherassistant.data.subject.SubjectDao
 
-@Database(entities = [Student::class, Subject::class, Mark::class], version = 1, exportSchema = false)
+@Database(entities = [Student::class, Subject::class, Mark::class, AssignmentLink::class], version = 1, exportSchema = false)
 abstract class TeacherDatabase: RoomDatabase() {
 
     abstract val studentDao: StudentDao
     abstract val subjectDao: SubjectDao
     abstract val markDao: MarkDao
-    abstract val assignmentDao: AssignmentDao
+    abstract val assignmentLinkDao: AssignmentLinkDao
 
     companion object{
         @Volatile

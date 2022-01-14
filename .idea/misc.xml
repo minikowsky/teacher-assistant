@@ -17,20 +17,29 @@
         <entry key="..\:/SemV/Android Studio/TeacherAssistant/app/src/main/res/layout/record_student_per_subject.xml" value="0.21458333333333332" />
         <entry key="..\:/SemV/Android Studio/TeacherAssistant/app/src/main/res/layout/record_subject.xml" value="0.12931034482758622" />
         <entry key="..\:/SemV/Android Studio/TeacherAssistant/app/src/main/res/layout/record_subject_per_student.xml" value="0.21458333333333332" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/drawable-v24/baseline_manage_accounts_24.xml" value="0.36666666666666664" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/drawable-v24/baseline_menu_book_24.xml" value="0.36666666666666664" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/drawable-v24/baseline_settings_24.xml" value="0.36666666666666664" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/drawable/baseline_add_20.xml" value="0.32407407407407407" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/drawable/baseline_add_24.xml" value="0.32407407407407407" />
-        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_mark_add.xml" value="0.15885416666666666" />
-        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_mark_list.xml" value="0.15885416666666666" />
-        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_student_add.xml" value="0.1" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_assigmnent_add.xml" value="0.35625" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_management.xml" value="0.35625" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_mark_add.xml" value="0.25" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_mark_list.xml" value="0.25" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_settings.xml" value="0.35625" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_student_add.xml" value="0.33" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_student_delete.xml" value="0.35625" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_student_list.xml" value="0.23867753623188406" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_student_list_per_subject.xml" value="0.1984375" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_subcject_list_per_student.xml" value="0.1984375" />
-        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_subject_add.xml" value="0.15885416666666666" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_subject_add.xml" value="0.25" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/fragment_subject_list.xml" value="0.1984375" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/record_mark.xml" value="0.23278985507246377" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/record_student.xml" value="0.23278985507246377" />
         <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/record_subject.xml" value="0.23278985507246377" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/layout/record_subject_assignment.xml" value="0.35625" />
+        <entry key="..\:/Studia_21-22/PS1. Aplikacje mobilne dla systemu Android/teacher-assistant/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.1" />
       </map>
     </option>
   </component>

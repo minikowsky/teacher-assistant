@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Diary"
+        android:id="@+id/fragment_subject_list"
+        android:icon="@drawable/baseline_menu_book_24"/>
+    <item android:title="Management"
+        android:id="@+id/fragmentManagement"
+        android:icon="@drawable/baseline_manage_accounts_24"/>
+    <item android:title="Settings"
+        android:id="@+id/fragmentSettings"
+        android:icon="@drawable/baseline_settings_24"/>
+</menu>

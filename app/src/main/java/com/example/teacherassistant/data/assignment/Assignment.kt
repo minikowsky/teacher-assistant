@@ -1,12 +1,16 @@
 package com.example.teacherassistant.data.assignment
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.Embedded
+import androidx.room.Junction
+import androidx.room.Relation
+import com.example.teacherassistant.data.student.Student
+import com.example.teacherassistant.data.subject.Subject
 
-@Entity(tableName = "assignments")
-data class Assignment(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
-    val studentId: Int,
-    val subjectId: Int
+data class Assignment (
+    @Embedded val subject: Subject,
+    @Relation(parentColumn = "subjectId",
+              entityColumn = "studentId",
+              associateBy = Junction(AssignmentLink::class)
+    )
+    val students: List<Student>
 )

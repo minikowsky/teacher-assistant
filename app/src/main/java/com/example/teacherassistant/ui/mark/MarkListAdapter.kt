@@ -12,13 +12,14 @@ import com.example.teacherassistant.R
 import com.example.teacherassistant.data.mark.Mark
 import com.example.teacherassistant.data.mark.MarkViewModel
 
-class MarkListAdapter(val marks: LiveData<List<Mark>>, private val viewModel: MarkViewModel)
+class MarkListAdapter(
+    private val marks: LiveData<List<Mark>>,
+    private val viewModel: MarkViewModel)
     : RecyclerView.Adapter<MarkListAdapter.Holder>() {
 
     inner class Holder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val markTextView: TextView = itemView.findViewById(R.id.textView_mark)
         val commentTextView: TextView = itemView.findViewById(R.id.textView_comment)
-        val dateTextView: TextView = itemView.findViewById(R.id.textView_mark_date)
         val deleteButton: Button = itemView.findViewById(R.id.button_mark_delete)
     }
 
@@ -31,7 +32,6 @@ class MarkListAdapter(val marks: LiveData<List<Mark>>, private val viewModel: Ma
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.markTextView.text = marks.value?.get(position)?.mark.toString()
         holder.commentTextView.text = marks.value?.get(position)?.comment
-        holder.dateTextView.text = marks.value?.get(position)?.date
 
         holder.deleteButton.setOnClickListener{
             marks.value?.let { existingMarks ->

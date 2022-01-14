@@ -1,12 +1,13 @@
-package com.example.teacherassistant.data.mark
+package com.example.teacherassistant.data.assignment
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
 import com.example.teacherassistant.data.student.Student
 import com.example.teacherassistant.data.subject.Subject
 
-@Entity(tableName = "marks",
+@Entity(tableName = "assignments",
+        primaryKeys = ["studentId","subjectId"],
         foreignKeys = [
             ForeignKey(
                 entity = Student::class,
@@ -17,10 +18,8 @@ import com.example.teacherassistant.data.subject.Subject
                 parentColumns = arrayOf("subjectId"),
                 childColumns = arrayOf("subjectId"))
         ])
-data class Mark (
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+data class AssignmentLink(
     val studentId: Int,
-    val subjectId: Int,
-    val mark:Float,
-    val comment: String)
+    @ColumnInfo(index = true)
+    val subjectId: Int
+)
