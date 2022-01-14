@@ -1,10 +1,12 @@
-package com.example.teacherassistant.data.mark
+package com.example.teacherassistant.ui.mark
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.teacherassistant.data.TeacherDatabase
+import com.example.teacherassistant.data.mark.Mark
+import com.example.teacherassistant.data.mark.MarkDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

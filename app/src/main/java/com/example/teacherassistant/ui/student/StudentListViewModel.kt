@@ -1,14 +1,16 @@
-package com.example.teacherassistant.data.assignment
+package com.example.teacherassistant.ui.student
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.teacherassistant.data.TeacherDatabase
+import com.example.teacherassistant.data.assignment.Assignment
+import com.example.teacherassistant.data.assignment.AssignmentLinkDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AssignmentViewModel(application: Application, subjectId: Int): AndroidViewModel(application){
+class StudentListViewModel(application: Application, subjectId: Int): AndroidViewModel(application){
     private val assignmentLinkDao: AssignmentLinkDao = TeacherDatabase.getInstance(application).assignmentLinkDao
 
     val studentsBySubjectId: LiveData<Assignment> = assignmentLinkDao.getAllBySubjectId(subjectId)

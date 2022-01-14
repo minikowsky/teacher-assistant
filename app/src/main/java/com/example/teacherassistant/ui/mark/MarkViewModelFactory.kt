@@ -1,4 +1,4 @@
-package com.example.teacherassistant.data.mark
+package com.example.teacherassistant.ui.mark
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

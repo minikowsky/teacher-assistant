@@ -1,10 +1,12 @@
-package com.example.teacherassistant.data.subject
+package com.example.teacherassistant.ui.subject
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.teacherassistant.data.TeacherDatabase
+import com.example.teacherassistant.data.subject.Subject
+import com.example.teacherassistant.data.subject.SubjectDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

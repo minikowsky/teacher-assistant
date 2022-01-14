@@ -5,16 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.R
 import com.example.teacherassistant.data.mark.Mark
-import com.example.teacherassistant.data.mark.MarkViewModel
 
 class MarkListAdapter(
     private val marks: LiveData<List<Mark>>,
-    private val viewModel: MarkViewModel)
+    private val viewModel: MarkViewModel
+)
     : RecyclerView.Adapter<MarkListAdapter.Holder>() {
 
     inner class Holder(itemView: View): RecyclerView.ViewHolder(itemView) {

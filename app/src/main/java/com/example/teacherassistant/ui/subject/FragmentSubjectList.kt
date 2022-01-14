@@ -6,14 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.R
-import com.example.teacherassistant.data.subject.SubjectViewModel
-import com.example.teacherassistant.data.subject.SubjectViewModelFactory
 
 class FragmentSubjectList : Fragment() {
     lateinit var viewModel: SubjectViewModel
@@ -40,6 +39,9 @@ class FragmentSubjectList : Fragment() {
 
         viewModel.subjects.observe(viewLifecycleOwner,
             Observer {
+                if(it.isEmpty()){
+                    Toast.makeText(context,"There is no subjects in a database!",Toast.LENGTH_LONG).show()
+                }
                 subjectAdapter.notifyDataSetChanged()
             })
 

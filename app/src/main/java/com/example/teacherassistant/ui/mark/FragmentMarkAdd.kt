@@ -10,7 +10,6 @@ import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 import com.example.teacherassistant.R
 import com.example.teacherassistant.data.mark.Mark
-import com.example.teacherassistant.data.mark.MarkViewModel
 import java.lang.NumberFormatException
 
 class FragmentMarkAdd : Fragment() {

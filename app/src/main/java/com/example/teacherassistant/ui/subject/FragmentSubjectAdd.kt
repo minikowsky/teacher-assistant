@@ -5,19 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
+import android.widget.*
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import com.example.teacherassistant.R
 import com.example.teacherassistant.data.subject.Subject
-import com.example.teacherassistant.data.subject.SubjectViewModel
+import com.google.android.material.textfield.TextInputEditText
 import java.lang.NumberFormatException
 
 class FragmentSubjectAdd : Fragment() {
-
     private lateinit var viewModel: SubjectViewModel
-
+    private val daysPL = listOf("Poniedziałek","Wtorek","Środa","Czwartek","Piątek")
+    private val daysEN = listOf("Monday","Tuesday","Wednesday","Thursday","Friday")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,22 +28,35 @@ class FragmentSubjectAdd : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.findViewById<AutoCompleteTextView>(R.id.subject_add_dayOfWeek)
+            .setAdapter(ArrayAdapter(requireContext(),R.layout.item_day_of_week,daysPL))
 
         view.findViewById<Button>(R.id.button_add_subject).apply {
             setOnClickListener {
-                val name = view.findViewById<EditText>(R.id.subject_add_name).text.toString()
-                val dayOfWeek = view.findViewById<EditText>(R.id.subject_add_dayOfWeek)
+                val name = view.findViewById<TextInputEditText>(R.id.subject_add_name).text.toString()
+                val dayOfWeek = view.findViewById<AutoCompleteTextView>(R.id.subject_add_dayOfWeek)
                     .text.toString()
-                val time = view.findViewById<EditText>(R.id.subject_add_time).text.toString()
+                val time = "${view.findViewById<TimePicker>(R.id.subject_add_time).hour}:" +
+                        "${view.findViewById<TimePicker>(R.id.subject_add_time).minute}"
                 val classroomNumber:Int? = try{
-                    view.findViewById<EditText>(R.id.subject_add_classroomNumber)
+                    view.findViewById<TextInputEditText>(R.id.subject_add_classroomNumber)
                         .text.toString().toInt()
                 } catch(e: NumberFormatException) {null}
-                val subject = Subject(0,name,dayOfWeek,time,classroomNumber?:0)
-                viewModel.createSubject(subject)
+                if(isDataValid(name,dayOfWeek,time,classroomNumber)){
+                    viewModel.createSubject(Subject(0,name,dayOfWeek,time,classroomNumber?:0))
+                } else {
+                    Toast.makeText(context,"Invalid data!",Toast.LENGTH_LONG).show()
+                }
+
             }
         }
 
+    }
+    private fun isDataValid(name: String, dayOfWeek:String, time:String, classroomNumber:Int?): Boolean{
+        if(name.isEmpty()||dayOfWeek.isEmpty()||time.isEmpty()||classroomNumber==null){
+            return false
+        }
+        return true
     }
 
 }

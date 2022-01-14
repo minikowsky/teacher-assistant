@@ -3,16 +3,12 @@ package com.example.teacherassistant.ui.student
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.R
 import com.example.teacherassistant.data.assignment.Assignment
 import com.example.teacherassistant.data.student.Student
-import com.example.teacherassistant.data.student.StudentViewModel
-import com.example.teacherassistant.data.subject.Subject
 
 class StudentListAdapter(private val assignments: LiveData<Assignment>,
                          private val onItemClicked: (Student) -> Unit)

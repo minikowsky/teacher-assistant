@@ -14,11 +14,9 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.R
-import com.example.teacherassistant.data.assignment.AssignmentViewModel
-import com.example.teacherassistant.data.assignment.AssignmentViewModelFactory
 
 class FragmentStudentList : Fragment() {
-    lateinit var viewModel: AssignmentViewModel
+    lateinit var viewModel: StudentListViewModel
     private val navigationArgs: FragmentStudentListArgs by navArgs()
 
     override fun onCreateView(
@@ -35,10 +33,10 @@ class FragmentStudentList : Fragment() {
 
         view.findViewById<TextView>(R.id.student_list_info_textView).text = navigationArgs.subjectName
 
-        val factory = AssignmentViewModelFactory(
+        val factory = StudentListViewModelFactory(
             (requireNotNull(this.activity).application),
             navigationArgs.subjectId)
-        viewModel= ViewModelProvider(requireActivity(),factory)[AssignmentViewModel::class.java]
+        viewModel= ViewModelProvider(requireActivity(),factory)[StudentListViewModel::class.java]
 
         val studentAdapter = StudentListAdapter(viewModel.studentsBySubjectId){
             val action = FragmentStudentListDirections.actionFragmentStudentListToFragmentMarkList(

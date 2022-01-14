@@ -13,8 +13,6 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.R
-import com.example.teacherassistant.data.mark.MarkViewModel
-import com.example.teacherassistant.data.mark.MarkViewModelFactory
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FragmentMarkList : Fragment() {

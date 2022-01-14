@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:hint="@string/day"
-            android:inputType="none"/>
+            android:inputType="text"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/subject_add_classroomNumber"

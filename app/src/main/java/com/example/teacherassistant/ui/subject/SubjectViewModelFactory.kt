@@ -1,4 +1,4 @@
-package com.example.teacherassistant.data.subject
+package com.example.teacherassistant.ui.subject
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
