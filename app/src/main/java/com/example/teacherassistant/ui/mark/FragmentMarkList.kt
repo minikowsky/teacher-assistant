@@ -2,10 +2,12 @@ package com.example.teacherassistant.ui.mark
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -16,9 +18,13 @@ import com.example.teacherassistant.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FragmentMarkList : Fragment() {
-    lateinit var viewModel: MarkViewModel
+    //lateinit var viewModel: MarkViewModel
     private val navigationArgs: FragmentMarkListArgs by navArgs()
-
+    val viewModel: MarkViewModel by viewModels { MarkViewModelFactory(
+        (requireNotNull(this.activity).application),
+        navigationArgs.subjectId,
+        navigationArgs.studentId)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,10 +36,13 @@ class FragmentMarkList : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val factory = MarkViewModelFactory(
+        Log.println(Log.INFO,"marklist","onViewCreated()")
+
+        /*val factory = MarkViewModelFactory(
             (requireNotNull(this.activity).application),
-            navigationArgs.subjectId,navigationArgs.studentId)
-        viewModel = ViewModelProvider(requireActivity(),factory)[MarkViewModel::class.java]
+            navigationArgs.subjectId,
+            navigationArgs.studentId)
+        viewModel = ViewModelProvider(requireActivity(),factory)[MarkViewModel::class.java]*/
 
         val markAdapter = MarkListAdapter(viewModel.marks, viewModel)
         viewModel.marks.observe(viewLifecycleOwner,
@@ -49,7 +58,10 @@ class FragmentMarkList : Fragment() {
             }
 
         view.findViewById<FloatingActionButton>(R.id.fab_add_mark).setOnClickListener {
-            it.findNavController().navigate(R.id.action_fragment_mark_list_to_fragmentMarkAdd)
+            val action = FragmentMarkListDirections.actionFragmentMarkListToFragmentMarkAdd(
+                navigationArgs.subjectId,
+                navigationArgs.studentId)
+            it.findNavController().navigate(action)
         }
     }
 

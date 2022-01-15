@@ -19,7 +19,8 @@ import com.example.teacherassistant.data.subject.Subject
                 childColumns = arrayOf("subjectId"))
         ])
 data class AssignmentLink(
-    val studentId: Int,
-    @ColumnInfo(index = true)
-    val subjectId: Int
+    @ColumnInfo(name = "studentId")
+    val studentId: Long,
+    @ColumnInfo(name = "subjectId",index = true)
+    val subjectId: Long
 )

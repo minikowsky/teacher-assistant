@@ -28,14 +28,22 @@ class FragmentSubjectAdd : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<AutoCompleteTextView>(R.id.subject_add_dayOfWeek)
-            .setAdapter(ArrayAdapter(requireContext(),R.layout.item_day_of_week,daysPL))
+
+        //val adapter = ArrayAdapter(requireContext(),R.layout.item_day_of_week,daysPL)
+        val spinner = view.findViewById<Spinner>(R.id.subject_add_dayOfWeek)
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.days_pl,
+            R.layout.item_day_of_week
+        ).also {adapter ->
+            adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
 
         view.findViewById<Button>(R.id.button_add_subject).apply {
             setOnClickListener {
                 val name = view.findViewById<TextInputEditText>(R.id.subject_add_name).text.toString()
-                val dayOfWeek = view.findViewById<AutoCompleteTextView>(R.id.subject_add_dayOfWeek)
-                    .text.toString()
+                val dayOfWeek = view.findViewById<Spinner>(R.id.subject_add_dayOfWeek).selectedItem.toString()
                 val time = "${view.findViewById<TimePicker>(R.id.subject_add_time).hour}:" +
                         "${view.findViewById<TimePicker>(R.id.subject_add_time).minute}"
                 val classroomNumber:Int? = try{

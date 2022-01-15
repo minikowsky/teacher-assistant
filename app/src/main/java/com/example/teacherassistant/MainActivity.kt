@@ -23,15 +23,11 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         bottomNavigationView.setupWithNavController(navHostFragment.navController)
 
-        /*findViewById<Button>(R.id.buttonSubjects)
-            .setOnClickListener {
-                findNavController(R.id.navigation)
-                    .navigate(R.id.action_fragment_subject_list_to_fragment_student_list )
-            }
-        findViewById<Button>(R.id.buttonStudents)
-            .setOnClickListener {
-                findNavController(R.id.navigation)
-                    .navigate(R.id.action_fragment_student_list_to_fragment_subject_list )
-            }*/
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

@@ -7,7 +7,7 @@ import androidx.room.*
 interface StudentDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun create(student: Student)
+    suspend fun create(student: Student): Long
 
     @Query("SELECT * FROM students ORDER BY studentId DESC")
     fun getAll(): LiveData<List<Student>>

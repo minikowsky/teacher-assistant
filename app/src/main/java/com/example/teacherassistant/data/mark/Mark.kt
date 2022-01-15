@@ -1,5 +1,6 @@
 package com.example.teacherassistant.data.mark
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
@@ -19,8 +20,10 @@ import com.example.teacherassistant.data.subject.Subject
         ])
 data class Mark (
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
-    val studentId: Int,
-    val subjectId: Int,
+    val id: Long,
+    @ColumnInfo(name = "studentId")
+    val studentId: Long,
+    @ColumnInfo(name = "subjectId")
+    val subjectId: Long,
     val mark:Float,
     val comment: String)

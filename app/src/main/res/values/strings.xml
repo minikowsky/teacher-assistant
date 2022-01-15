@@ -15,4 +15,27 @@
     <string name="time">Time</string>
     <string name="classroom">Classroom</string>
     <string name="album_number">Album number</string>
+
+    <string-array name="days_pl">
+        <item>Poniedziałek</item>
+        <item>Wtorek</item>
+        <item>Środa</item>
+        <item>Czwartek</item>
+        <item>Piątek</item>
+    </string-array>
+    <string-array name="days_en">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
+    <string-array name="mark_value">
+        <item>2.0</item>
+        <item>3.0</item>
+        <item>3.5</item>
+        <item>4.0</item>
+        <item>4.5</item>
+        <item>5.0</item>
+    </string-array>
 </resources>

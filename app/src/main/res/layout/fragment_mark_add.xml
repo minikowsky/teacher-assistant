@@ -23,12 +23,11 @@
         android:textSize="20sp"
         android:layout_margin="10sp"
         />
-    <AutoCompleteTextView
+    <Spinner
         android:id="@+id/mark_add_mark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mark"
-        android:inputType="none"/>
+        android:hint="Mark"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/mark_add_comment"

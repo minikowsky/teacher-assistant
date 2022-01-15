@@ -2,11 +2,13 @@ package com.example.teacherassistant.ui.student
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -16,8 +18,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.teacherassistant.R
 
 class FragmentStudentList : Fragment() {
-    lateinit var viewModel: StudentListViewModel
+
     private val navigationArgs: FragmentStudentListArgs by navArgs()
+    val viewModel : StudentListViewModel by viewModels { StudentListViewModelFactory(
+        (requireNotNull(this.activity).application),
+        navigationArgs.subjectId) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,13 +35,10 @@ class FragmentStudentList : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        Log.println(Log.INFO,"student list","Student list onViewCreated()")
         view.findViewById<TextView>(R.id.student_list_info_textView).text = navigationArgs.subjectName
 
-        val factory = StudentListViewModelFactory(
-            (requireNotNull(this.activity).application),
-            navigationArgs.subjectId)
-        viewModel= ViewModelProvider(requireActivity(),factory)[StudentListViewModel::class.java]
+        viewModel.studentsBySubjectId.value?.students?.forEach { s-> Log.println(Log.INFO,"t",s.firstName+s.lastName) }
 
         val studentAdapter = StudentListAdapter(viewModel.studentsBySubjectId){
             val action = FragmentStudentListDirections.actionFragmentStudentListToFragmentMarkList(
@@ -47,17 +49,21 @@ class FragmentStudentList : Fragment() {
             findNavController().navigate(action)
         }
 
+        val studentListLayoutManager = LinearLayoutManager(context)
+        view.findViewById<RecyclerView>(R.id.rv_student_list)
+            .apply {
+                adapter = studentAdapter
+                layoutManager = studentListLayoutManager
+            }
+
         viewModel.studentsBySubjectId.observe(viewLifecycleOwner,
             Observer {
                 studentAdapter.notifyDataSetChanged()
             })
+    }
 
-        val studentListLayoutManager = LinearLayoutManager(context)
-        view.findViewById<RecyclerView>(R.id.rv_student_list)
-            .let {
-                it.adapter = studentAdapter
-                it.layoutManager = studentListLayoutManager
-            }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.println(Log.INFO,"student list","Student list onDestroyView()")
     }
 }

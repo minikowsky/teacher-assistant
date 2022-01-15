@@ -10,14 +10,9 @@ import com.example.teacherassistant.data.assignment.AssignmentLinkDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class StudentListViewModel(application: Application, subjectId: Int): AndroidViewModel(application){
+class StudentListViewModel(application: Application, subjectId: Long): AndroidViewModel(application){
     private val assignmentLinkDao: AssignmentLinkDao = TeacherDatabase.getInstance(application).assignmentLinkDao
 
     val studentsBySubjectId: LiveData<Assignment> = assignmentLinkDao.getAllBySubjectId(subjectId)
 
-    fun createAssignment(subejctId:Int, studentId: Int){
-        viewModelScope.launch(Dispatchers.IO) {
-            assignmentLinkDao.create(subejctId, studentId)
-        }
-    }
 }

@@ -1,5 +1,6 @@
 package com.example.teacherassistant.ui.subject
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +33,9 @@ class SubjectListAdapter(val subjects: LiveData<List<Subject>>,
         holder.timeTextView.text = subjects.value?.get(position)?.time
         holder.classroomNumberTextView.text = subjects.value?.get(position)?.classroomNumber.toString()
         holder.itemView.setOnClickListener {
+            Log.println(Log.INFO,"INFO",subjects.value?.get(position)!!.name)
             onItemClicked(subjects.value?.get(position)!!)
+
         }
     }
 

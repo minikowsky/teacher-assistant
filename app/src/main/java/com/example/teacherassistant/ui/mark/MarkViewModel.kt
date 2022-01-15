@@ -10,7 +10,8 @@ import com.example.teacherassistant.data.mark.MarkDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MarkViewModel(application: Application, subjectId:Int, studentId:Int) : AndroidViewModel(application) {
+class MarkViewModel(application: Application, subjectId:Long, studentId:Long)
+    : AndroidViewModel(application) {
     private val markDao: MarkDao = TeacherDatabase.getInstance(application).markDao
 
     val marks: LiveData<List<Mark>> = markDao.getAllByStudentAndSubject(studentId,subjectId)

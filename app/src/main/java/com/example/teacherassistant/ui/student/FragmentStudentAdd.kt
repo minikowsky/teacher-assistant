@@ -27,8 +27,6 @@ class FragmentStudentAdd : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = ViewModelProvider(requireActivity())[StudentAddViewModel::class.java]
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_student_add, container, false)
     }
@@ -36,7 +34,8 @@ class FragmentStudentAdd : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val factory = StudentAddViewModelFactory((requireNotNull(this.activity).application))
+        viewModel = ViewModelProvider(requireActivity(),factory)[StudentAddViewModel::class.java]
         val studentAddAdapter = StudentAddAdapter(viewModel.subjects)
         viewModel.subjects.observe(viewLifecycleOwner, Observer {
             studentAddAdapter.notifyDataSetChanged()

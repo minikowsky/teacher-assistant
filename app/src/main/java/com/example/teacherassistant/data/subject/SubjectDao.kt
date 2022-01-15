@@ -9,7 +9,7 @@ interface SubjectDao {
     fun getAll(): LiveData<List<Subject>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun create(subject: Subject)
+    suspend fun create(subject: Subject)
 
     @Delete
     fun delete(subject: Subject)

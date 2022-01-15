@@ -6,11 +6,11 @@ import androidx.room.*
 @Dao
 interface AssignmentLinkDao {
     @Query("INSERT INTO assignments VALUES (:studentId, :subjectId)")
-    suspend fun create(subjectId: Int, studentId: Int)
+    suspend fun create(subjectId: Long, studentId: Long)
 
     @Transaction
     @Query("SELECT * FROM subjects WHERE subjectId = :subjectId")
-    fun getAllBySubjectId(subjectId: Int): LiveData<Assignment>
+    fun getAllBySubjectId(subjectId: Long): LiveData<Assignment>
 
     @Delete
     fun delete(assignmentLink: AssignmentLink)

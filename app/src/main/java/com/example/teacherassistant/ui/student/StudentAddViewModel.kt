@@ -22,9 +22,9 @@ class StudentAddViewModel(application: Application) : AndroidViewModel(applicati
 
     fun createStudent(student: Student,subjectsToLink:MutableList<Subject?>) {
         viewModelScope.launch(Dispatchers.IO) {
-            studentDao.create(student)
+            val studentId = studentDao.create(student)
             subjectsToLink.forEach{
-                assignmentLinkDao.create(it?.subjectId!!,student.studentId)
+                assignmentLinkDao.create(it?.subjectId!!,studentId)
             }
         }
 

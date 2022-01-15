@@ -10,23 +10,10 @@
         android:label="FragmentStudentList" >
         <action
             android:id="@+id/action_fragment_student_list_to_fragment_mark_list"
-            app:destination="@id/fragment_mark_list" >
-            <argument
-                android:name="subjectId"
-                app:argType="integer"/>
-            <argument
-                android:name="subjectName"
-                app:argType="string"/>
-            <argument
-                android:name="studentId"
-                app:argType="integer"/>
-            <argument
-                android:name="studentName"
-                app:argType="string"/>
-        </action>
+            app:destination="@id/fragment_mark_list" />
         <argument
             android:name="subjectId"
-            app:argType="integer"/>
+            app:argType="long"/>
         <argument
             android:name="subjectName"
             app:argType="string"/>
@@ -40,14 +27,7 @@
             app:destination="@id/fragmentSettings" />
         <action
             android:id="@+id/action_fragment_subject_list_to_fragment_student_list"
-            app:destination="@id/fragment_student_list" >
-            <argument
-                android:name="subjectId"
-                app:argType="integer"/>
-            <argument
-                android:name="subjectName"
-                app:argType="string"/>
-        </action>
+            app:destination="@id/fragment_student_list" />
         <action
             android:id="@+id/action_fragment_subject_list_to_fragmentManagement"
             app:destination="@id/fragmentManagement" />
@@ -59,19 +39,19 @@
         tools:layout="@layout/fragment_mark_list" >
         <argument
             android:name="subjectId"
-            app:argType="integer"/>
+            app:argType="long"/>
         <argument
             android:name="subjectName"
             app:argType="string"/>
         <argument
             android:name="studentId"
-            app:argType="integer"/>
+            app:argType="long"/>
         <argument
             android:name="studentName"
             app:argType="string"/>
         <action
             android:id="@+id/action_fragment_mark_list_to_fragmentMarkAdd"
-            app:destination="@id/fragmentMarkAdd" />
+            app:destination="@id/fragmentMarkAdd"/>
     </fragment>
     <fragment
         android:id="@+id/fragment_student_add"
@@ -87,7 +67,15 @@
         android:id="@+id/fragmentMarkAdd"
         android:name="com.example.teacherassistant.ui.mark.FragmentMarkAdd"
         android:label="fragment_mark_add"
-        tools:layout="@layout/fragment_mark_add" />
+        tools:layout="@layout/fragment_mark_add">
+        <argument
+            android:name="subjectId"
+            app:argType="long"/>
+        <argument
+            android:name="studentId"
+            app:argType="long"/>
+
+    </fragment>
     <fragment
         android:id="@+id/fragmentSettings"
         android:name="com.example.teacherassistant.ui.FragmentSettings"
