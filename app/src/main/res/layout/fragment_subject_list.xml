@@ -9,10 +9,11 @@
     tools:context=".ui.subject.FragmentSubjectList">
 
     <TextView
+        android:id="@+id/subject_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Subjects"
-        android:gravity="end"
+        android:text="@string/subjects"
+        android:gravity="center"
         android:textSize="30sp"
         android:layout_marginBottom="10dp"/>
 
@@ -24,27 +25,26 @@
         android:layout_marginBottom="5dp">
 
         <TextView
-            android:text="Name"
+            android:id="@+id/subject_list_name"
+            android:text="@string/name"
             android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="5dp"
-            android:layout_width="0dp"
-            android:layout_weight="6"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:text="Day"
-            android:gravity="center"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:layout_width="0dp"
             android:layout_weight="5"
             android:layout_height="wrap_content"
             android:textSize="18sp"/>
 
         <TextView
-            android:text="Time"
+            android:id="@+id/subject_list_day"
+            android:text="@string/day"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/subject_list_time"
+            android:text="@string/time"
             android:gravity="center"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
@@ -54,11 +54,11 @@
             android:textSize="18sp"/>
 
         <TextView
-            android:text="Room"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:id="@+id/subject_list_classroom"
+            android:text="@string/classroom"
             android:layout_width="0dp"
             android:layout_weight="3"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:textSize="18sp" />
 

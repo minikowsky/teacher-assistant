@@ -4,6 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.FragmentManagement">
+    <TextView
+        android:id="@+id/management_textView_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/management"
+        android:textSize="25sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -16,14 +24,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="50sp"
-            android:text="Add subject" />
+            android:text="@string/management_add_subject_btn_text" />
 
         <Button
             android:id="@+id/button_add_student"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Add student"
+            android:text="@string/management_add_student_btn_text"
              />
 
     </LinearLayout>

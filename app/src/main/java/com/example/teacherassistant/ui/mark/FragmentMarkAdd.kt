@@ -5,15 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
+import android.widget.*
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
+import com.example.teacherassistant.MainActivity
 import com.example.teacherassistant.R
 import com.example.teacherassistant.data.mark.Mark
+import com.example.teacherassistant.tools.LanguageManager
+import com.google.android.material.textfield.TextInputEditText
 import java.lang.NumberFormatException
 
 class FragmentMarkAdd : Fragment() {
@@ -36,6 +36,7 @@ class FragmentMarkAdd : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setLanguage(view)
 
         val spinner = view.findViewById<Spinner>(R.id.mark_add_mark)
         ArrayAdapter.createFromResource(
@@ -66,5 +67,16 @@ class FragmentMarkAdd : Fragment() {
             }
         }
 
+    }
+
+    private fun setLanguage(view: View){
+        val lang = (activity as MainActivity).lang
+        view.findViewById<TextView>(R.id.mark_add_add_grade_text_view).text=
+            context?.let { it1 -> LanguageManager.setLanguage(it1,lang,R.string.add_grade) }
+
+        view.findViewById<TextInputEditText>(R.id.mark_add_comment).hint=
+            context?.let { it1 -> LanguageManager.setLanguage(it1,lang,R.string.comment) }
+        view.findViewById<Button>(R.id.button_add_mark).text=
+            context?.let { it1 -> LanguageManager.setLanguage(it1,lang,R.string.add) }
     }
 }

@@ -4,21 +4,14 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ui.mark.FragmentMarkAdd">
+    tools:context=".ui.mark.FragmentMarkAdd"
+    android:layout_margin="10dp">
 
     <TextView
+        android:id="@+id/mark_add_add_grade_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mark_info_textView"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_margin="10sp"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add grade"
+        android:text="@string/add_grade"
         android:gravity="end"
         android:textSize="20sp"
         android:layout_margin="10sp"
@@ -27,13 +20,13 @@
         android:id="@+id/mark_add_mark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mark"/>
+        android:hint="@string/mark"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/mark_add_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Comment" />
+        android:hint="@string/comment" />
 
     <Button
         android:id="@+id/button_add_mark"

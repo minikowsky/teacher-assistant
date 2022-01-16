@@ -7,9 +7,10 @@
     tools:context=".ui.student.FragmentStudentAdd">
 
     <TextView
+        android:id="@+id/student_add_personal_data_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Personal data"
+        android:text="@string/student_add_personal_data_text"
         android:gravity="end"
         android:textSize="20sp"
         android:layout_margin="10sp"
@@ -31,12 +32,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:hint="@string/album_number" />
+        android:hint="@string/album_id" />
 
     <TextView
+        android:id="@+id/assign_to_subject_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Assign to subjects"
+        android:text="@string/student_add_assign_to_subjects_text"
         android:textSize="20sp"
         android:gravity="end"
         android:layout_margin="10sp"

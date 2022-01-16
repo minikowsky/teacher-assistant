@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -36,13 +37,16 @@ class FragmentMarkList : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.println(Log.INFO,"marklist","onViewCreated()")
+        //Log.println(Log.INFO,"marklist","onViewCreated()")
 
         /*val factory = MarkViewModelFactory(
             (requireNotNull(this.activity).application),
             navigationArgs.subjectId,
             navigationArgs.studentId)
         viewModel = ViewModelProvider(requireActivity(),factory)[MarkViewModel::class.java]*/
+
+        view.findViewById<TextView>(R.id.mark_list_info_textView).text =
+            "Oceny ${navigationArgs.studentName} z ${navigationArgs.subjectName}"
 
         val markAdapter = MarkListAdapter(viewModel.marks, viewModel)
         viewModel.marks.observe(viewLifecycleOwner,

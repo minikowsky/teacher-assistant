@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.FragmentSettings">
 
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Change language"
+            android:text="@string/settings_change_language_btn_text"
             android:layout_marginBottom="30sp"
             />
 
@@ -25,7 +26,16 @@
             android:layout_width="wrap_content"
             android:backgroundTint="@color/black"
             android:layout_height="wrap_content"
-            android:text="Remove data" />
+            android:text="@string/settings_remove_data_btn_text" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/settings_textView_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:textSize="25sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"/>
 
 </FrameLayout>

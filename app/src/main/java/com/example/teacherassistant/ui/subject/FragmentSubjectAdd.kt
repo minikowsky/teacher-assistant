@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.lifecycle.ViewModelProvider
+import com.example.teacherassistant.MainActivity
 import com.example.teacherassistant.R
 import com.example.teacherassistant.data.subject.Subject
+import com.example.teacherassistant.tools.LanguageManager
 import com.google.android.material.textfield.TextInputEditText
 import java.lang.NumberFormatException
 
 class FragmentSubjectAdd : Fragment() {
     private lateinit var viewModel: SubjectViewModel
-    private val daysPL = listOf("Poniedziałek","Wtorek","Środa","Czwartek","Piątek")
-    private val daysEN = listOf("Monday","Tuesday","Wednesday","Thursday","Friday")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,12 +28,12 @@ class FragmentSubjectAdd : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setLanguage(view)
         //val adapter = ArrayAdapter(requireContext(),R.layout.item_day_of_week,daysPL)
         val spinner = view.findViewById<Spinner>(R.id.subject_add_dayOfWeek)
         ArrayAdapter.createFromResource(
             requireContext(),
-            R.array.days_pl,
+            R.array.days,
             R.layout.item_day_of_week
         ).also {adapter ->
             adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
@@ -66,5 +66,16 @@ class FragmentSubjectAdd : Fragment() {
         }
         return true
     }
+    private fun setLanguage(view: View){
+        val lang = (activity as MainActivity).lang
+        view.findViewById<TextView>(R.id.subject_add_subject_data_text).text=
+            context?.let { it1 -> LanguageManager.setLanguage(it1,lang,R.string.subject_add_subject_data_text) }
+        view.findViewById<TextInputEditText>(R.id.subject_add_name).hint=
+            context?.let { it1 -> LanguageManager.setLanguage(it1,lang,R.string.name) }
+        view.findViewById<TextInputEditText>(R.id.subject_add_classroomNumber).hint=
+            context?.let { it1 -> LanguageManager.setLanguage(it1,lang,R.string.classroom) }
+        view.findViewById<Button>(R.id.button_add_subject).text=
+            context?.let { it1 -> LanguageManager.setLanguage(it1,lang,R.string.add) }
 
+    }
 }

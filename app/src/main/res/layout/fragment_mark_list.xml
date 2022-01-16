@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mark_info_textView"
+        android:id="@+id/mark_list_info_textView"
         android:gravity="center"
         android:textSize="20sp"
         android:layout_margin="10sp"
